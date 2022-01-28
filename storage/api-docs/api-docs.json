@@ -1,0 +1,58 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Project",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/user/1": {
+            "get": {
+                "operationId": "c758116e8019e02fb5b3e6baa1a074f4",
+                "responses": {
+                    "200": {
+                        "description": "User with id=1."
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "60456303cb8ad1adad9008091d174d95",
+                "responses": {
+                    "200": {
+                        "description": "User has been successfully deleted!"
+                    }
+                }
+            }
+        },
+        "/api/user/1?name=asdf&avatar=asdfasdf&email=asdfa@asdfas.lv&position=asdfasf": {
+            "put": {
+                "operationId": "2f5f2a2ebb721b9bbb7aac8b87ce7f90",
+                "responses": {
+                    "200": {
+                        "description": "Users data has been successfully updated!"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "5a56f6c514c7d8dc965ea02f31542630",
+                "responses": {
+                    "200": {
+                        "description": "User has been successfully added!"
+                    }
+                }
+            }
+        },
+        "/api/users/query?page=1": {
+            "get": {
+                "operationId": "afdd24fecd0152fd4c3722452fdd0f0b",
+                "responses": {
+                    "200": {
+                        "description": "User has been successfully deleted!"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

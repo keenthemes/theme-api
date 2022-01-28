@@ -4,17 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * @OA\Info(
+ *     title="Project",
+ *     version="1.0.0"
+ * )
+ */
 class UsersController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function __invoke(Request $request)
-    {
-        public $users;
+    public $users;
     public $properties = ["id", "name", "email", "position", "online"];
 
     function __construct() {
@@ -279,6 +277,5 @@ class UsersController extends Controller
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
         $items = $items instanceof Collection ? $items : Collection::make($items);
         return new LengthAwarePaginator($items->forPage($page, $perPage)->values()->all(), $items->count(), $perPage, $page, $options);
-    }
     }
 }
