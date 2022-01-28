@@ -1,21 +1,123 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Project",
+        "title": "Keenthemes API",
+        "description": "Keenthemes products Mock API",
         "version": "1.0.0"
     },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api",
+            "description": "Keenthemes server"
+        }
+    ],
     "paths": {
-        "/api/user/1": {
+        "/user/{id}": {
             "get": {
-                "operationId": "c758116e8019e02fb5b3e6baa1a074f4",
+                "tags": [
+                    "Users"
+                ],
+                "description": "Get user by id.",
+                "operationId": "a1b628826bab1d988073b662c8b62e90",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "User with id=1."
+                        "description": "User with the provided id."
+                    },
+                    "404": {
+                        "description": "User with the provided id is not found."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Update user info by id.",
+                "operationId": "1e34be9e4566dcb1fe809416db67b7f7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "User name.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "avatar",
+                        "in": "query",
+                        "description": "User avatar image path.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "User email address.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "position",
+                        "in": "query",
+                        "description": "User position.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "422": {
+                        "description": "Not all required filed are provided!"
+                    },
+                    "200": {
+                        "description": "Users data has been successfully updated!"
                     }
                 }
             },
             "delete": {
-                "operationId": "60456303cb8ad1adad9008091d174d95",
+                "tags": [
+                    "Users"
+                ],
+                "description": "Delete user by id.",
+                "operationId": "ba695443dc042c28e6c9a590544b1c26",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "User has been successfully deleted!"
@@ -23,35 +125,138 @@
                 }
             }
         },
-        "/api/user/1?name=asdf&avatar=asdfasdf&email=asdfa@asdfas.lv&position=asdfasf": {
+        "/user": {
             "put": {
-                "operationId": "2f5f2a2ebb721b9bbb7aac8b87ce7f90",
-                "responses": {
-                    "200": {
-                        "description": "Users data has been successfully updated!"
+                "tags": [
+                    "Users"
+                ],
+                "description": "Add new user.",
+                "operationId": "47070944c509b343baa9d064ea0f89bc",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "User name.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "avatar",
+                        "in": "query",
+                        "description": "User avatar image path.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "User email address.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "position",
+                        "in": "query",
+                        "description": "User position.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
-                }
-            },
-            "post": {
-                "operationId": "5a56f6c514c7d8dc965ea02f31542630",
+                ],
                 "responses": {
+                    "422": {
+                        "description": "Not all required filed are provided!"
+                    },
                     "200": {
                         "description": "User has been successfully added!"
                     }
                 }
             }
         },
-        "/api/users/query?page=1": {
+        "/users/query": {
             "get": {
-                "operationId": "afdd24fecd0152fd4c3722452fdd0f0b",
+                "tags": [
+                    "Users"
+                ],
+                "description": "Get user query.",
+                "operationId": "bc3c2577f5235c826b755d49ee1818f1",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Pagination current page",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "description": "Items per page",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search key.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort label.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "description": "Sort order asc/desc.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "User has been successfully deleted!"
+                        "description": "List of the users"
+                    }
+                }
+            }
+        },
+        "/users/query?filter_two_steps=false": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Get filterd users.",
+                "operationId": "f88d4678e43ccc6fe41ea81154753269",
+                "responses": {
+                    "200": {
+                        "description": "List of the users"
                     }
                 }
             }
         }
     },
+    "tags": [
+        {
+            "name": "Users",
+            "description": "API Endpoints of Users"
+        }
+    ],
     "security": [
         []
     ]

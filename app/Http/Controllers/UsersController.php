@@ -8,16 +8,30 @@ use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
 
-/**
- * @OA\Info(
- *     title="Project",
- *     version="1.0.0"
- * )
- */
+
 class UsersController extends Controller
 {
+    /**
+     * @OA\Info(
+     *      version="1.0.0",
+     *      title="Keenthemes API",
+     *      description="Keenthemes products Mock API",
+     * )
+     *
+     * @OA\Server(
+     *      url=L5_SWAGGER_CONST_HOST,
+     *      description="Keenthemes server"
+     * )
+
+     *
+     * @OA\Tag(
+     *     name="Users",
+     *     description="API Endpoints of Users"
+     * )
+     */
+
     public $users;
-    public $properties = ["id", "name", "email", "position", "online"];
+    public $properties = ["id", "name", "email", "position", 'role', 'last_login', 'two_steps', 'joined_day', 'online'];
 
     function __construct() {
         $this->users = [
@@ -27,7 +41,11 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-6.jpg', 
                 'email' => 'e.smith@kpmg.com.au', 
                 'position' => 'Art Director',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],
             [
                 'id' => 2,
@@ -35,7 +53,11 @@ class UsersController extends Controller
                 'initials' => ['label' => 'M', 'state' => 'danger'],
                 'email' => 'melody@altbox.com', 
                 'position' => 'Marketing Analytic',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],        
             [
                 'id' => 3,
@@ -43,7 +65,11 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-1.jpg', 
                 'email' => 'max@kt.com', 
                 'position' => 'Software Enginer',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],    
             [
                 'id' => 4,
@@ -51,7 +77,11 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-5.jpg', 
                 'email' => 'sean@dellito.com', 
                 'position' => 'Web Developer',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],
             [
                 'id' => 5,
@@ -59,7 +89,11 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-25.jpg', 
                 'email' => 'brian@exchange.com', 
                 'position' => 'UI/UX Designer',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => false,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],
             [
                 'id' => 6,
@@ -67,7 +101,11 @@ class UsersController extends Controller
                 'initials' => ['label' => 'C', 'state' => 'warning'],
                 'email' => 'mikaela@pexcom.com', 
                 'position' => 'Head Of Marketing',
-                "online" => true
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
             ],
             [
                 'id' => 7,
@@ -75,7 +113,11 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-9.jpg', 
                 'email' => 'f.mitcham@kpmg.com.au', 
                 'position' => 'Software Arcitect',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],
             [
                 'id' => 8,
@@ -83,7 +125,11 @@ class UsersController extends Controller
                 'initials' => ['label' => 'O', 'state' => 'danger'],
                 'email' => 'olivia@corpmail.com', 
                 'position' => 'System Admin',
-                "online" => true
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
             ],
             [
                 'id' => 9,
@@ -91,7 +137,11 @@ class UsersController extends Controller
                 'initials' => ['label' => 'N', 'state' => 'primary'],
                 'email' => 'owen.neil@gmail.com', 
                 'position' => 'Account Manager',
-                "online" => true
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
             ],
             [
                 'id' => 10,
@@ -99,7 +149,11 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-23.jpg', 
                 'email' => 'dam@consilting.com', 
                 'position' => 'Web Desinger',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],
             [
                 'id' => 11,
@@ -107,7 +161,11 @@ class UsersController extends Controller
                 'initials' => ['label' => 'E', 'state' => 'danger'],
                 'email' => 'emma@intenso.com', 
                 'position' => 'Corporate Finance',
-                "online" => true
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
             ],
             [
                 'id' => 12,
@@ -115,7 +173,11 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-12.jpg', 
                 'email' => 'ana.cf@limtel.com', 
                 'position' => 'Customer Relationship',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],
             [
                 'id' => 13,
@@ -123,7 +185,11 @@ class UsersController extends Controller
                 'initials' => ['label' => 'A', 'state' => 'info'],
                 'email' => 'robert@benko.com', 
                 'position' => 'Marketing Executive',
-                "online" => true
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
             ],
             [
                 'id' => 14,
@@ -131,7 +197,11 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-13.jpg', 
                 'email' => 'miller@mapple.com', 
                 'position' => 'Project Manager',
-                "online" => false
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => false
             ],
             [
                 'id' => 15,
@@ -139,7 +209,11 @@ class UsersController extends Controller
                 'initials' => ['label' => 'L', 'state' => 'success'],
                 'email' => 'lucy.m@fentech.com', 
                 'position' => 'SEO Master',
-                "online" => true
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
             ],
             [
                 'id' => 16,
@@ -147,15 +221,91 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-21.jpg', 
                 'email' => 'ethan@loop.com.au', 
                 'position' => 'Accountant',
-                "online" => true
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
+            ],
+            [
+                'id' => 17,
+                'name' => 'Ethan Wilder', 
+                'avatar' => 'avatars/300-21.jpg', 
+                'email' => 'ethan@loop.com.au', 
+                'position' => 'Accountant',
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
+            ],
+            [
+                'id' => 18,
+                'name' => 'Ethan Wilder', 
+                'avatar' => 'avatars/300-21.jpg', 
+                'email' => 'ethan@loop.com.au', 
+                'position' => 'Accountant',
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
+            ],
+            [
+                'id' => 19,
+                'name' => 'Ethan Wilder', 
+                'avatar' => 'avatars/300-21.jpg', 
+                'email' => 'ethan@loop.com.au', 
+                'position' => 'Accountant',
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
+            ],
+            [
+                'id' => 20,
+                'name' => 'Ethan Wilder', 
+                'avatar' => 'avatars/300-21.jpg', 
+                'email' => 'ethan@loop.com.au', 
+                'position' => 'Accountant',
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
+            ],
+            [
+                'id' => 21,
+                'name' => 'Ethan Wilder', 
+                'avatar' => 'avatars/300-21.jpg', 
+                'email' => 'ethan@loop.com.au', 
+                'position' => 'Accountant',
+                'role' => '	Administrator',
+                'last_login' => 'Yesterday',
+                'two_steps' => true,
+                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'online' => true
             ]
-            ];
+        ];
     }
 
     /**
      * @OA\Get(
-     *     path="/api/user/1",
-     *     @OA\Response(response="200", description="User with id=1.")
+     *     path="/user/{id}",
+     *     tags={"Users"},
+     *     description="Get user by id.",
+     *     @OA\Parameter(
+     *          name="id",
+     *          description="User id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *     @OA\Response(response="200", description="User with the provided id."),
+     *     @OA\Response(response="404", description="User with the provided id is not found.")
      * )
      */
     function getUser(String $id){
@@ -175,8 +325,47 @@ class UsersController extends Controller
     }
 
     /**
-     * @OA\Post(
-     *     path="/api/user/1?name=asdf&avatar=asdfasdf&email=asdfa@asdfas.lv&position=asdfasf",
+     * @OA\Put(
+     *     path="/user",
+     *     tags={"Users"},
+     *     description="Add new user.",
+     *     @OA\Parameter(
+     *          name="name",
+     *          description="User name.",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="avatar",
+     *          description="User avatar image path.",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="email",
+     *          description="User email address.",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="position",
+     *          description="User position.",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Response(response="422", description="Not all required filed are provided!"),
      *     @OA\Response(response="200", description="User has been successfully added!")
      * )
      */
@@ -188,14 +377,62 @@ class UsersController extends Controller
             'position'      => 'required|string|max:255',
         ]);
 
-        array_push($request->all());
+        array_push($this->users, $request->all());
 
         return response("User has been successfully added!", 200);
     }
 
     /**
-     * @OA\Put(
-     *     path="/api/user/1?name=asdf&avatar=asdfasdf&email=asdfa@asdfas.lv&position=asdfasf",
+     * @OA\Post(
+     *     path="/user/{id}",
+     *     tags={"Users"},
+     *     description="Update user info by id.",
+     *     @OA\Parameter(
+     *          name="id",
+     *          description="User id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="name",
+     *          description="User name.",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="avatar",
+     *          description="User avatar image path.",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="email",
+     *          description="User email address.",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="position",
+     *          description="User position.",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Response(response="422", description="Not all required filed are provided!"),
      *     @OA\Response(response="200", description="Users data has been successfully updated!")
      * )
      */
@@ -222,7 +459,18 @@ class UsersController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/user/1",
+     *     path="/user/{id}",
+     *     tags={"Users"},
+     *     description="Delete user by id.",
+     *     @OA\Parameter(
+     *          name="id",
+     *          description="User id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
      *     @OA\Response(response="200", description="User has been successfully deleted!")
      * )
      */
@@ -239,8 +487,57 @@ class UsersController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/users/query?page=1",
-     *     @OA\Response(response="200", description="User has been successfully deleted!")
+     *     path="/users/query",
+     *     tags={"Users"},
+     *     description="Get user query.",
+     *     @OA\Parameter(
+     *          name="page",
+     *          description="Pagination current page",
+     *          in="query",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="items_per_page",
+     *          description="Items per page",
+     *          in="query",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="search",
+     *          description="Search key.",
+     *          in="query",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="sort",
+     *          description="Sort label.",
+     *          in="query",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="order",
+     *          description="Sort order asc/desc.",
+     *          in="query",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Response(response="200", description="List of the users")
+     * )
+     *
+     * @OA\Get(
+     *     path="/users/query?filter_online=false",
+     *     tags={"Users"},
+     *     description="Get filterd users.",
+     *     @OA\Response(response="200", description="List of the users"),
      * )
      */
     function getUsers(Request $request){
@@ -254,7 +551,7 @@ class UsersController extends Controller
         foreach ($this->properties as $value) {
             $filterValue = $request->input("filter_".$value);
             if($filterValue){
-                if($value === "online"){
+                if($value === 'online' || $value === 'two_steps'){
                     $filters[$value] = $filterValue === 'true' ? true : false;
                 } else {
                     $filters[$value] = $filterValue;
