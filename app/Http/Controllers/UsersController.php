@@ -17,6 +17,7 @@ class UsersController extends Controller
      *      title="Keenthemes API",
      *      description="Keenthemes products Mock API",
      * )
+     * 
      *
      * @OA\Server(
      *      url=L5_SWAGGER_CONST_HOST,
@@ -306,8 +307,8 @@ class UsersController extends Controller
      *              type="integer"
      *          )
      *      ),
-     *     @OA\Response(response="200", description="User by provided id."),
-     *     @OA\Response(response="404", description="User with the provided id is not found.")
+     *     @OA\Response(response="200", description="User by provided id.", @OA\JsonContent()),
+     *     @OA\Response(response="404", description="User with the provided id is not found.", @OA\JsonContent())
      * )
      */
     function getUser(String $id){
@@ -367,8 +368,8 @@ class UsersController extends Controller
      *              type="string"
      *          )
      *      ),
-     *     @OA\Response(response="422", description="Not all required fileds are provided."),
-     *     @OA\Response(response="200", description="User has been successfully added.")
+     *     @OA\Response(response="422", description="Not all required fileds are provided.", @OA\JsonContent()),
+     *     @OA\Response(response="200", description="User has been successfully added.", @OA\JsonContent())
      * )
      */
     function addUser(Request $request){
@@ -379,9 +380,13 @@ class UsersController extends Controller
             'position'      => 'required|string|max:255',
         ]);
 
-        array_push($this->users, $request->all());
+        $newUser = $request->all();
 
-        return response(["data" => $request->all()], 200);
+        $newUser["id"] = count($this->users)+1;
+
+        array_push($this->users, $newUser);
+
+        return response(["data" => $newUser], 200);
     }
 
     /**
@@ -434,8 +439,8 @@ class UsersController extends Controller
      *              type="string"
      *          )
      *      ),
-     *     @OA\Response(response="422", description="Not all required filed are provided."),
-     *     @OA\Response(response="200", description="Users data has been successfully updated.")
+     *     @OA\Response(response="422", description="Not all required filed are provided.", @OA\JsonContent()),
+     *     @OA\Response(response="200", description="Users data has been successfully updated.", @OA\JsonContent())
      * )
      */
     function updateUser(Request $request, String $id){
@@ -473,8 +478,8 @@ class UsersController extends Controller
      *              type="integer"
      *          )
      *      ),
-     *     @OA\Response(response="200", description="User has been successfully deleted."),
-     *     @OA\Response(response="404", description="User with provided id is not found.")
+     *     @OA\Response(response="200", description="User has been successfully deleted.", @OA\JsonContent()),
+     *     @OA\Response(response="404", description="User with provided id is not found.", @OA\JsonContent())
      * )
      */
     function deleteUser($id){
@@ -539,14 +544,14 @@ class UsersController extends Controller
      *              type="string"
      *          )
      *      ),
-     *     @OA\Response(response="200", description="List of the users.")
+     *     @OA\Response(response="200", description="List of the users.", @OA\JsonContent())
      * )
      *
      * @OA\Get(
      *     path="/users/query?filter_online=false",
      *     tags={"Users"},
      *     description="Get filterd users.",
-     *     @OA\Response(response="200", description="List of the users."),
+     *     @OA\Response(response="200", description="List of the users.", @OA\JsonContent()),
      * )
      */
     function getUsers(Request $request){
@@ -585,13 +590,13 @@ class UsersController extends Controller
             "data" => [
                 "users" => $paginatedUsers["data"],
                 "pagination"=>[
-                    "current_page"=> $paginatedUsers["current_page"],
+                    "page"=> $paginatedUsers["current_page"],
                     "first_page_url"=> $paginatedUsers["first_page_url"],
                     "from"=> $paginatedUsers["from"],
                     "last_page"=> $paginatedUsers["last_page"],
                     "links"=> $paginatedUsers["links"],
                     "next_page_url"=> $paginatedUsers["next_page_url"],
-                    "per_page"=> $paginatedUsers["per_page"],
+                    "items_per_page"=> $paginatedUsers["per_page"],
                     "prev_page_url"=> $paginatedUsers["prev_page_url"],
                     "to"=> $paginatedUsers["to"],
                     "total"=> $paginatedUsers["total"]

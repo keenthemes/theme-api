@@ -32,10 +32,20 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "User by provided id."
+                        "description": "User by provided id.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     },
                     "404": {
-                        "description": "User with the provided id is not found."
+                        "description": "User with the provided id is not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     }
                 }
             },
@@ -94,10 +104,20 @@
                 ],
                 "responses": {
                     "422": {
-                        "description": "Not all required filed are provided."
+                        "description": "Not all required filed are provided.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     },
                     "200": {
-                        "description": "Users data has been successfully updated."
+                        "description": "Users data has been successfully updated.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     }
                 }
             },
@@ -120,10 +140,20 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "User has been successfully deleted."
+                        "description": "User has been successfully deleted.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     },
                     "404": {
-                        "description": "User with provided id is not found."
+                        "description": "User with provided id is not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     }
                 }
             }
@@ -175,10 +205,20 @@
                 ],
                 "responses": {
                     "422": {
-                        "description": "Not all required fileds are provided."
+                        "description": "Not all required fileds are provided.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     },
                     "200": {
-                        "description": "User has been successfully added."
+                        "description": "User has been successfully added.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     }
                 }
             }
@@ -234,7 +274,12 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of the users."
+                        "description": "List of the users.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     }
                 }
             }
@@ -248,7 +293,12 @@
                 "operationId": "311ff59a58a4b617ad73fdb8acba571d",
                 "responses": {
                     "200": {
-                        "description": "List of the users."
+                        "description": "List of the users.",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     }
                 }
             }
