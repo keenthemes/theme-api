@@ -28,6 +28,8 @@ class UsersController extends Controller
      *     name="Users",
      *     description="API Endpoints of Users"
      * )
+     * 
+     * 
      */
 
     public $users;
@@ -41,7 +43,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-6.jpg', 
                 'email' => 'e.smith@kpmg.com.au', 
                 'position' => 'Art Director',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -53,7 +55,7 @@ class UsersController extends Controller
                 'initials' => ['label' => 'M', 'state' => 'danger'],
                 'email' => 'melody@altbox.com', 
                 'position' => 'Marketing Analytic',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -65,7 +67,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-1.jpg', 
                 'email' => 'max@kt.com', 
                 'position' => 'Software Enginer',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -77,7 +79,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-5.jpg', 
                 'email' => 'sean@dellito.com', 
                 'position' => 'Web Developer',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -89,7 +91,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-25.jpg', 
                 'email' => 'brian@exchange.com', 
                 'position' => 'UI/UX Designer',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => false,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -101,7 +103,7 @@ class UsersController extends Controller
                 'initials' => ['label' => 'C', 'state' => 'warning'],
                 'email' => 'mikaela@pexcom.com', 
                 'position' => 'Head Of Marketing',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -113,7 +115,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-9.jpg', 
                 'email' => 'f.mitcham@kpmg.com.au', 
                 'position' => 'Software Arcitect',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -125,7 +127,7 @@ class UsersController extends Controller
                 'initials' => ['label' => 'O', 'state' => 'danger'],
                 'email' => 'olivia@corpmail.com', 
                 'position' => 'System Admin',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -137,7 +139,7 @@ class UsersController extends Controller
                 'initials' => ['label' => 'N', 'state' => 'primary'],
                 'email' => 'owen.neil@gmail.com', 
                 'position' => 'Account Manager',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -149,7 +151,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-23.jpg', 
                 'email' => 'dam@consilting.com', 
                 'position' => 'Web Desinger',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -161,7 +163,7 @@ class UsersController extends Controller
                 'initials' => ['label' => 'E', 'state' => 'danger'],
                 'email' => 'emma@intenso.com', 
                 'position' => 'Corporate Finance',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -173,7 +175,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-12.jpg', 
                 'email' => 'ana.cf@limtel.com', 
                 'position' => 'Customer Relationship',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -185,7 +187,7 @@ class UsersController extends Controller
                 'initials' => ['label' => 'A', 'state' => 'info'],
                 'email' => 'robert@benko.com', 
                 'position' => 'Marketing Executive',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -197,7 +199,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-13.jpg', 
                 'email' => 'miller@mapple.com', 
                 'position' => 'Project Manager',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -209,7 +211,7 @@ class UsersController extends Controller
                 'initials' => ['label' => 'L', 'state' => 'success'],
                 'email' => 'lucy.m@fentech.com', 
                 'position' => 'SEO Master',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -221,7 +223,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-21.jpg', 
                 'email' => 'ethan@loop.com.au', 
                 'position' => 'Accountant',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -233,7 +235,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-21.jpg', 
                 'email' => 'ethan@loop.com.au', 
                 'position' => 'Accountant',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -245,7 +247,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-21.jpg', 
                 'email' => 'ethan@loop.com.au', 
                 'position' => 'Accountant',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -257,7 +259,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-21.jpg', 
                 'email' => 'ethan@loop.com.au', 
                 'position' => 'Accountant',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -269,7 +271,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-21.jpg', 
                 'email' => 'ethan@loop.com.au', 
                 'position' => 'Accountant',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -281,7 +283,7 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-21.jpg', 
                 'email' => 'ethan@loop.com.au', 
                 'position' => 'Accountant',
-                'role' => '	Administrator',
+                'role' => 'Administrator',
                 'last_login' => 'Yesterday',
                 'two_steps' => true,
                 'joined_day' => "15 Apr 2022, 2:40 pm",
@@ -304,7 +306,7 @@ class UsersController extends Controller
      *              type="integer"
      *          )
      *      ),
-     *     @OA\Response(response="200", description="User with the provided id."),
+     *     @OA\Response(response="200", description="User by provided id."),
      *     @OA\Response(response="404", description="User with the provided id is not found.")
      * )
      */
@@ -318,10 +320,10 @@ class UsersController extends Controller
         }
 
         if(!$user){
-            return response("User with id ".$id." is not found.", 404);
+            return response(["message" => "User with id ".$id." is not found."], 404);
         }
 
-        return response($user, 200);
+        return response(["data"=>$user], 200);
     }
 
     /**
@@ -365,8 +367,8 @@ class UsersController extends Controller
      *              type="string"
      *          )
      *      ),
-     *     @OA\Response(response="422", description="Not all required filed are provided!"),
-     *     @OA\Response(response="200", description="User has been successfully added!")
+     *     @OA\Response(response="422", description="Not all required fileds are provided."),
+     *     @OA\Response(response="200", description="User has been successfully added.")
      * )
      */
     function addUser(Request $request){
@@ -379,7 +381,7 @@ class UsersController extends Controller
 
         array_push($this->users, $request->all());
 
-        return response("User has been successfully added!", 200);
+        return response(["data" => $request->all()], 200);
     }
 
     /**
@@ -432,8 +434,8 @@ class UsersController extends Controller
      *              type="string"
      *          )
      *      ),
-     *     @OA\Response(response="422", description="Not all required filed are provided!"),
-     *     @OA\Response(response="200", description="Users data has been successfully updated!")
+     *     @OA\Response(response="422", description="Not all required filed are provided."),
+     *     @OA\Response(response="200", description="Users data has been successfully updated.")
      * )
      */
     function updateUser(Request $request, String $id){
@@ -453,7 +455,7 @@ class UsersController extends Controller
             }
         }
 
-        return response("Users data has been successfully updated!", 200);
+        return response(["data" => $request->all()], 200);
     }
 
 
@@ -471,18 +473,25 @@ class UsersController extends Controller
      *              type="integer"
      *          )
      *      ),
-     *     @OA\Response(response="200", description="User has been successfully deleted!")
+     *     @OA\Response(response="200", description="User has been successfully deleted."),
+     *     @OA\Response(response="404", description="User with provided id is not found.")
      * )
      */
     function deleteUser($id){
+        $userFound = false;
         $usersCollection = collect($this->users);
         foreach($usersCollection as $key => $item){
             if($item['id'] == $id){
+                $userFound = true;
                 unset($usersCollection[$key]);
             }
         }
 
-        return response("User has been successfully deleted!", 200);
+        if(!$userFound){
+            return response(["message" => "User with id ".$id." is not found."], 404);
+        }
+
+        return response(200);
     }
 
     /**
@@ -530,14 +539,14 @@ class UsersController extends Controller
      *              type="string"
      *          )
      *      ),
-     *     @OA\Response(response="200", description="List of the users")
+     *     @OA\Response(response="200", description="List of the users.")
      * )
      *
      * @OA\Get(
      *     path="/users/query?filter_online=false",
      *     tags={"Users"},
      *     description="Get filterd users.",
-     *     @OA\Response(response="200", description="List of the users"),
+     *     @OA\Response(response="200", description="List of the users."),
      * )
      */
     function getUsers(Request $request){
@@ -570,7 +579,24 @@ class UsersController extends Controller
             $usersCollection = $usersCollection->where($key, $item);
         }
 
-        return response(["data" => $this->paginate($usersCollection, $itemPerPage)], 200);
+        $paginatedUsers = $this->paginate($usersCollection, $itemPerPage)->toArray();;
+
+        return response([
+            "data" => [
+                "users" => $paginatedUsers["data"],
+                "pagination"=>[
+                    "current_page"=> $paginatedUsers["current_page"],
+                    "first_page_url"=> $paginatedUsers["first_page_url"],
+                    "from"=> $paginatedUsers["from"],
+                    "last_page"=> $paginatedUsers["last_page"],
+                    "links"=> $paginatedUsers["links"],
+                    "next_page_url"=> $paginatedUsers["next_page_url"],
+                    "per_page"=> $paginatedUsers["per_page"],
+                    "prev_page_url"=> $paginatedUsers["prev_page_url"],
+                    "to"=> $paginatedUsers["to"],
+                    "total"=> $paginatedUsers["total"]
+            ]]
+        ], 200);
     }
 
     public function paginate($items, $perPage = 5, $page = null, $options = [])

@@ -32,7 +32,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "User with the provided id."
+                        "description": "User by provided id."
                     },
                     "404": {
                         "description": "User with the provided id is not found."
@@ -94,10 +94,10 @@
                 ],
                 "responses": {
                     "422": {
-                        "description": "Not all required filed are provided!"
+                        "description": "Not all required filed are provided."
                     },
                     "200": {
-                        "description": "Users data has been successfully updated!"
+                        "description": "Users data has been successfully updated."
                     }
                 }
             },
@@ -120,7 +120,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "User has been successfully deleted!"
+                        "description": "User has been successfully deleted."
+                    },
+                    "404": {
+                        "description": "User with provided id is not found."
                     }
                 }
             }
@@ -172,10 +175,10 @@
                 ],
                 "responses": {
                     "422": {
-                        "description": "Not all required filed are provided!"
+                        "description": "Not all required fileds are provided."
                     },
                     "200": {
-                        "description": "User has been successfully added!"
+                        "description": "User has been successfully added."
                     }
                 }
             }
@@ -231,21 +234,21 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of the users"
+                        "description": "List of the users."
                     }
                 }
             }
         },
-        "/users/query?filter_two_steps=false": {
+        "/users/query?filter_online=false": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "description": "Get filterd users.",
-                "operationId": "f88d4678e43ccc6fe41ea81154753269",
+                "operationId": "311ff59a58a4b617ad73fdb8acba571d",
                 "responses": {
                     "200": {
-                        "description": "List of the users"
+                        "description": "List of the users."
                     }
                 }
             }
