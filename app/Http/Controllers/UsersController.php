@@ -7,6 +7,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
 
 class UsersController extends Controller
@@ -308,7 +309,7 @@ class UsersController extends Controller
      *          )
      *      ),
      *     @OA\Response(response="200", description="User by provided id.", @OA\JsonContent()),
-     *     @OA\Response(response="404", description="User with the provided id is not found.", @OA\JsonContent())
+     *     @OA\Response(response="404", description="User with the provided id was not found.", @OA\JsonContent())
      * )
      */
     function getUser(String $id){
@@ -321,7 +322,7 @@ class UsersController extends Controller
         }
 
         if(!$user){
-            return response(["message" => "User with id ".$id." is not found."], 404);
+            return response(["payload"=>["message" => "User with id ".$id." was not found."]], 404);
         }
 
         return response(["data"=>$user], 200);
@@ -373,12 +374,16 @@ class UsersController extends Controller
      * )
      */
     function addUser(Request $request){
-        $request->validate([
+        $validationResult = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'avatar'  => 'required|string|max:255',
             'email'      => 'required|string|email|max:255',
             'position'      => 'required|string|max:255',
         ]);
+
+        if(count($validationResult->errors())!=0) {
+            return response(["payload"=>["message"=>"The given data was invalid.", "errors"=>$validationResult->errors()]], 422);
+        }
 
         $newUser = $request->all();
 
@@ -444,12 +449,16 @@ class UsersController extends Controller
      * )
      */
     function updateUser(Request $request, String $id){
-        $request->validate([
+        $validationResult =  Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'avatar'  => 'required|string|max:255',
             'email'      => 'required|string|email|max:255',
             'position'      => 'required|string|max:255',
         ]);
+
+        if(count($validationResult->errors())!=0) {
+            return response(["payload"=>["message"=>"The given data was invalid.", "errors"=>$validationResult->errors()]], 422);
+        }
 
         foreach ($this->users as $object) {
             if($object["id"] == $id){
@@ -479,7 +488,7 @@ class UsersController extends Controller
      *          )
      *      ),
      *     @OA\Response(response="200", description="User has been successfully deleted.", @OA\JsonContent()),
-     *     @OA\Response(response="404", description="User with provided id is not found.", @OA\JsonContent())
+     *     @OA\Response(response="404", description="User with provided id was not found.", @OA\JsonContent())
      * )
      */
     function deleteUser($id){
@@ -493,7 +502,7 @@ class UsersController extends Controller
         }
 
         if(!$userFound){
-            return response(["message" => "User with id ".$id." is not found."], 404);
+            return response(["payload"=>["message" => "User with id ".$id." was not found."]], 404);
         }
 
         return response(200);
@@ -587,9 +596,9 @@ class UsersController extends Controller
         $paginatedUsers = $this->paginate($usersCollection, $itemPerPage)->toArray();;
 
         return response([
-            "data" => [
-                "users" => $paginatedUsers["data"],
-                "pagination"=>[
+            "data" => $paginatedUsers["data"],
+            "payload" => [
+                "pagination" => [
                     "page"=> $paginatedUsers["current_page"],
                     "first_page_url"=> $paginatedUsers["first_page_url"],
                     "from"=> $paginatedUsers["from"],
@@ -600,7 +609,8 @@ class UsersController extends Controller
                     "prev_page_url"=> $paginatedUsers["prev_page_url"],
                     "to"=> $paginatedUsers["to"],
                     "total"=> $paginatedUsers["total"]
-            ]]
+                ]
+            ]
         ], 200);
     }
 
