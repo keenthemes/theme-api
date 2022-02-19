@@ -43,12 +43,12 @@ class UsersController extends Controller
                 'id' => 1,
                 'name' => 'Emma Smith', 
                 'avatar' => 'avatars/300-6.jpg', 
-                'email' => 'e.smith@kpmg.com.au', 
+                'email' => 'smith@kpmg.com', 
                 'position' => 'Art Director',
                 'role' => 'Administrator',
                 'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'two_steps' => false,
+                'joined_day' => "10 Nov 2022, 9:23 pm",
                 'online' => false
             ],
             [
@@ -57,10 +57,10 @@ class UsersController extends Controller
                 'initials' => ['label' => 'M', 'state' => 'danger'],
                 'email' => 'melody@altbox.com', 
                 'position' => 'Marketing Analytic',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
+                'role' => 'Analyst',
+                'last_login' => '20 mins ago',
                 'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'joined_day' => "10 Nov 2022, 8:43 pm",
                 'online' => false
             ],        
             [
@@ -69,10 +69,10 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-1.jpg', 
                 'email' => 'max@kt.com', 
                 'position' => 'Software Enginer',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'role' => 'Developer',
+                'last_login' => '3 days ago',
+                'two_steps' => false,
+                'joined_day' => "22 Sep 2022, 8:43 pm",
                 'online' => false
             ],    
             [
@@ -81,10 +81,10 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-5.jpg', 
                 'email' => 'sean@dellito.com', 
                 'position' => 'Web Developer',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
+                'role' => 'Support',
+                'last_login' => '5 hours ago',
                 'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'joined_day' => "21 Feb 2022, 6:43 am",
                 'online' => false
             ],
             [
@@ -93,47 +93,47 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-25.jpg', 
                 'email' => 'brian@exchange.com', 
                 'position' => 'UI/UX Designer',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => false,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'role' => 'Developer',
+                'last_login' => '2 days ago',
+                'two_steps' => true,
+                'joined_day' => "10 Mar 2022, 9:23 pm",
                 'online' => false
             ],
             [
                 'id' => 6,
-                'name' => 'Melody Macy', 
+                'name' => 'Mikaela Collins', 
                 'initials' => ['label' => 'C', 'state' => 'warning'],
-                'email' => 'mikaela@pexcom.com', 
+                'email' => 'mik@pex.com', 
                 'position' => 'Head Of Marketing',
                 'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'last_login' => '5 days ago',
+                'two_steps' => false,
+                'joined_day' => "20 Dec 2022, 10:10 pm",
+                'online' => false
             ],
             [
                 'id' => 7,
                 'name' => 'Francis Mitcham', 
                 'avatar' => 'avatars/300-9.jpg', 
-                'email' => 'f.mitcham@kpmg.com.au', 
+                'email' => 'f.mit@kpmg.com', 
                 'position' => 'Software Arcitect',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'role' => 'Trial',
+                'last_login' => '3 weeks ago',
+                'two_steps' => false,
+                'joined_day' => "10 Nov 2022, 6:43 am",
                 'online' => false
             ],
             [
                 'id' => 8,
-                'name' => 'Melody Macy', 
+                'name' => 'Olivia Wild', 
                 'initials' => ['label' => 'O', 'state' => 'danger'],
                 'email' => 'olivia@corpmail.com', 
                 'position' => 'System Admin',
                 'role' => 'Administrator',
                 'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'two_steps' => false,
+                'joined_day' => "19 Aug 2022, 11:05 am",
+                'online' => false
             ],
             [
                 'id' => 9,
@@ -141,11 +141,11 @@ class UsersController extends Controller
                 'initials' => ['label' => 'N', 'state' => 'primary'],
                 'email' => 'owen.neil@gmail.com', 
                 'position' => 'Account Manager',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
+                'role' => 'Analyst',
+                'last_login' => '20 mins ago',
                 'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'joined_day' => "25 Oct 2022, 10:30 am",
+                'online' => false
             ],
             [
                 'id' => 10,
@@ -153,10 +153,10 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-23.jpg', 
                 'email' => 'dam@consilting.com', 
                 'position' => 'Web Desinger',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'role' => 'Developer',
+                'last_login' => '3 days ago',
+                'two_steps' => false,
+                'joined_day' => "19 Aug 2022, 10:10 pm",
                 'online' => false
             ],
             [
@@ -165,10 +165,10 @@ class UsersController extends Controller
                 'initials' => ['label' => 'E', 'state' => 'danger'],
                 'email' => 'emma@intenso.com', 
                 'position' => 'Corporate Finance',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
+                'role' => 'Support',
+                'last_login' => '5 hours ago',
                 'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'joined_day' => "20 Dec 2022, 11:05 am",
                 'online' => true
             ],
             [
@@ -177,10 +177,10 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-12.jpg', 
                 'email' => 'ana.cf@limtel.com', 
                 'position' => 'Customer Relationship',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
+                'role' => 'Developer',
+                'last_login' => '2 days ago',
                 'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'joined_day' => "20 Dec 2022, 10:10 pm",
                 'online' => false
             ],
             [
@@ -190,10 +190,10 @@ class UsersController extends Controller
                 'email' => 'robert@benko.com', 
                 'position' => 'Marketing Executive',
                 'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'last_login' => '5 days ago',
+                'two_steps' => false,
+                'joined_day' => "05 May 2022, 10:30 am",
+                'online' => false
             ],
             [
                 'id' => 14,
@@ -201,10 +201,10 @@ class UsersController extends Controller
                 'avatar' => 'avatars/300-13.jpg', 
                 'email' => 'miller@mapple.com', 
                 'position' => 'Project Manager',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
+                'role' => 'Trial',
+                'last_login' => '3 weeks ago',
+                'two_steps' => false,
+                'joined_day' => "25 Jul 2022, 11:30 am",
                 'online' => false
             ],
             [
@@ -215,82 +215,82 @@ class UsersController extends Controller
                 'position' => 'SEO Master',
                 'role' => 'Administrator',
                 'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'two_steps' => false,
+                'joined_day' => "05 May 2022, 6:05 pm",
+                'online' => false
             ],
             [
                 'id' => 16,
-                'name' => 'Ethan Wilder', 
-                'avatar' => 'avatars/300-21.jpg', 
-                'email' => 'ethan@loop.com.au', 
+                'name' => 'Melody Macy', 
+                'initials' => ['label' => 'M', 'state' => 'danger'], 
+                'email' => 'melody@altbox.com', 
                 'position' => 'Accountant',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
+                'role' => 'Analyst',
+                'last_login' => '20 mins ago',
                 'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'joined_day' => "20 Dec 2022, 5:20 pm",
+                'online' => false
             ],
             [
                 'id' => 17,
-                'name' => 'Ethan Wilder', 
-                'avatar' => 'avatars/300-21.jpg', 
-                'email' => 'ethan@loop.com.au', 
+                'name' => 'Max Smith', 
+                'avatar' => 'avatars/300-1', 
+                'email' => 'max@kt.com', 
                 'position' => 'Accountant',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'role' => 'Developer',
+                'last_login' => '3 days ago',
+                'two_steps' => false,
+                'joined_day' => "24 Jun 2022, 11:30 am",
+                'online' => false
             ],
             [
                 'id' => 18,
-                'name' => 'Ethan Wilder', 
-                'avatar' => 'avatars/300-21.jpg', 
-                'email' => 'ethan@loop.com.au', 
+                'name' => 'Sean Bean', 
+                'avatar' => 'avatars/300-5.jpg', 
+                'email' => 'sean@dellito.com', 
                 'position' => 'Accountant',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
+                'role' => 'Support',
+                'last_login' => '5 hours ago',
                 'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'joined_day' => "22 Sep 2022, 6:05 pm",
+                'online' => false
             ],
             [
                 'id' => 19,
-                'name' => 'Ethan Wilder', 
-                'avatar' => 'avatars/300-21.jpg', 
-                'email' => 'ethan@loop.com.au', 
+                'name' => 'Brian Cox', 
+                'avatar' => 'avatars/300-25.jpg', 
+                'email' => 'brian@exchange.com', 
                 'position' => 'Accountant',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
+                'role' => 'Developer',
+                'last_login' => '2 days ago',
                 'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'joined_day' => "25 Oct 2022, 10:30 am",
+                'online' => false
             ],
             [
                 'id' => 20,
-                'name' => 'Ethan Wilder', 
-                'avatar' => 'avatars/300-21.jpg', 
-                'email' => 'ethan@loop.com.au', 
-                'position' => 'Accountant',
+                'name' => 'Mikaela Collins', 
+                'initials' => ['label' => 'C', 'state' => 'warning'],
+                'email' => 'mik@pex.com', 
+                'position' => 'Head Of Marketing',
                 'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
+                'last_login' => '5 days ago',
+                'two_steps' => false,
+                'joined_day' => "19 Aug 2022, 11:05 am",
+                'online' => false
             ],
             [
                 'id' => 21,
-                'name' => 'Ethan Wilder', 
-                'avatar' => 'avatars/300-21.jpg', 
-                'email' => 'ethan@loop.com.au', 
-                'position' => 'Accountant',
-                'role' => 'Administrator',
-                'last_login' => 'Yesterday',
-                'two_steps' => true,
-                'joined_day' => "15 Apr 2022, 2:40 pm",
-                'online' => true
-            ]
+                'name' => 'Francis Mitcham', 
+                'avatar' => 'avatars/300-9.jpg', 
+                'email' => 'f.mit@kpmg.com', 
+                'position' => 'Software Arcitect',
+                'role' => 'Trial',
+                'last_login' => '3 weeks ago',
+                'two_steps' => false,
+                'joined_day' => "10 Nov 2022, 5:20 pm",
+                'online' => false
+            ],
         ];
     }
 
@@ -593,7 +593,18 @@ class UsersController extends Controller
             $usersCollection = $usersCollection->where($key, $item);
         }
 
-        $paginatedUsers = $this->paginate($usersCollection, $itemPerPage)->toArray();;
+        $paginatedUsers = $this->paginate($usersCollection, $itemPerPage)->toArray();
+
+        $newLinks = [];
+
+        foreach ($paginatedUsers["links"] as $element) {
+            if($element["url"]){
+                $element["page"] = (int) str_replace("/?page=","", $element["url"]); ;
+            } else {
+                $element["page"] = null;
+            }
+            array_push($newLinks, $element);
+        }
 
         return response([
             "data" => $paginatedUsers["data"],
@@ -603,7 +614,7 @@ class UsersController extends Controller
                     "first_page_url"=> $paginatedUsers["first_page_url"],
                     "from"=> $paginatedUsers["from"],
                     "last_page"=> $paginatedUsers["last_page"],
-                    "links"=> $paginatedUsers["links"],
+                    "links"=> $newLinks,
                     "next_page_url"=> $paginatedUsers["next_page_url"],
                     "items_per_page"=> $paginatedUsers["per_page"],
                     "prev_page_url"=> $paginatedUsers["prev_page_url"],
