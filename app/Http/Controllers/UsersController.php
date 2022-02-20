@@ -564,6 +564,7 @@ class UsersController extends Controller
      * )
      */
     function getUsers(Request $request){
+        $searchableFields = ["name", "email", "role", "last_login"];
         $usersCollection = collect($this->users);
         $filters = collect([]);
         $search = $request->input('search');
@@ -598,12 +599,10 @@ class UsersController extends Controller
         if($search){
             $searchedArray = [];
             foreach($usersCollection as $item){
-                foreach($item as $property => $value){
-                    if(!is_array($value)){
-                        if(strpos(strtolower($value), strtolower($search)) === 0){
-                            array_push($searchedArray, $item);
-                            break;
-                        }
+                foreach($searchableFields as $field){
+                    if(strpos(strtolower($item[$field]), strtolower($search)) !== false){
+                        array_push($searchedArray, $item);
+                        break;
                     }
                 }
             }
