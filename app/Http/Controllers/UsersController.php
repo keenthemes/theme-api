@@ -590,8 +590,10 @@ class UsersController extends Controller
         }
 
     
-        foreach ($filters as $key => $item) {
-            $usersCollection = $usersCollection->where($key, $item);
+        foreach ($filters as $key => $value) {
+            $usersCollection = $usersCollection->filter(function ($item) use ($key, $value) {
+                return strtolower($item[$key]) == strtolower($value);
+            });
         }
 
         $pagination = $usersCollection;
