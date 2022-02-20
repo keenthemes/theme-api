@@ -597,18 +597,17 @@ class UsersController extends Controller
 
         if($search){
             $searchedArray = [];
-
-        foreach($usersCollection as $item){
-            foreach($item as $property => $value){
-                if(!is_array($value)){
-                    if(strpos($value, $search) === 0){
-                        array_push($searchedArray, $item);
-                        break;
+            foreach($usersCollection as $item){
+                foreach($item as $property => $value){
+                    if(!is_array($value)){
+                        if(strpos(strtolower($value), strtolower($search)) === 0){
+                            array_push($searchedArray, $item);
+                            break;
+                        }
                     }
                 }
             }
-        }
-        $pagination = $searchedArray;
+            $pagination = $searchedArray;
         }
 
 
