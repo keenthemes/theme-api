@@ -102,7 +102,7 @@ class UsersController extends Controller
             [
                 'id' => 6,
                 'name' => 'Mikaela Collins', 
-                'initials' => ['label' => 'C', 'state' => 'warning'],
+                'initials' => ['label' => 'M', 'state' => 'warning'],
                 'email' => 'mik@pex.com', 
                 'position' => 'Head Of Marketing',
                 'role' => 'Administrator',
@@ -186,8 +186,8 @@ class UsersController extends Controller
             [
                 'id' => 13,
                 'name' => 'Robert Doe', 
-                'initials' => ['label' => 'A', 'state' => 'info'],
-                'email' => 'robert@benko.com', 
+                'initials' => ['label' => 'R', 'state' => 'info'],
+                'email' => 'robert@benko.com',
                 'position' => 'Marketing Executive',
                 'role' => 'Administrator',
                 'last_login' => '5 days ago',
@@ -221,9 +221,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 16,
-                'name' => 'Melody Macy', 
-                'initials' => ['label' => 'M', 'state' => 'danger'], 
-                'email' => 'melody@altbox.com', 
+                'name' => 'Minnie Cooper', 
+                'initials' => ['label' => 'M', 'state' => 'primary'], 
+                'email' => 'minnie.cooper@kt.com', 
                 'position' => 'Accountant',
                 'role' => 'Analyst',
                 'last_login' => '20 mins ago',
@@ -233,9 +233,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 17,
-                'name' => 'Max Smith', 
-                'avatar' => 'avatars/300-1', 
-                'email' => 'max@kt.com', 
+                'name' => 'Annette Smith',
+                'avatar' => 'avatars/300-14.jpg',
+                'email' => 'annette.smith@kt.com', 
                 'position' => 'Accountant',
                 'role' => 'Developer',
                 'last_login' => '3 days ago',
@@ -245,9 +245,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 18,
-                'name' => 'Sean Bean', 
-                'avatar' => 'avatars/300-5.jpg', 
-                'email' => 'sean@dellito.com', 
+                'name' => 'Kristen Webb',
+                'avatar' => 'avatars/300-18.jpg', 
+                'email' => 'kristen.webb@dellito.com', 
                 'position' => 'Accountant',
                 'role' => 'Support',
                 'last_login' => '5 hours ago',
@@ -257,9 +257,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 19,
-                'name' => 'Brian Cox', 
-                'avatar' => 'avatars/300-25.jpg', 
-                'email' => 'brian@exchange.com', 
+                'name' => 'Vicki Moreno', 
+                'avatar' => 'avatars/300-22.jpg', 
+                'email' => 'vicki.moreno@exchange.com', 
                 'position' => 'Accountant',
                 'role' => 'Developer',
                 'last_login' => '2 days ago',
@@ -269,9 +269,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 20,
-                'name' => 'Mikaela Collins', 
-                'initials' => ['label' => 'C', 'state' => 'warning'],
-                'email' => 'mik@pex.com', 
+                'name' => 'Lucas Hicks', 
+                'initials' => ['label' => 'L', 'state' => 'danger'],
+                'email' => 'lucas.hicks@pex.com', 
                 'position' => 'Head Of Marketing',
                 'role' => 'Administrator',
                 'last_login' => '5 days ago',
@@ -281,9 +281,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 21,
-                'name' => 'Francis Mitcham', 
-                'avatar' => 'avatars/300-9.jpg', 
-                'email' => 'f.mit@kpmg.com', 
+                'name' => 'Nellie Jones',
+                'avatar' => 'avatars/300-24.jpg', 
+                'email' => 'nellie.jones@kpmg.com', 
                 'position' => 'Software Arcitect',
                 'role' => 'Trial',
                 'last_login' => '3 weeks ago',
@@ -593,7 +593,26 @@ class UsersController extends Controller
             $usersCollection = $usersCollection->where($key, $item);
         }
 
-        $paginatedUsers = $this->paginate($usersCollection, $itemPerPage)->toArray();
+        $pagination = $usersCollection;
+
+        if($search){
+            $searchedArray = [];
+
+        foreach($usersCollection as $item){
+            foreach($item as $property => $value){
+                if(!is_array($value)){
+                    if(strpos($value, $search) === 0){
+                        array_push($searchedArray, $item);
+                        break;
+                    }
+                }
+            }
+        }
+        $pagination = $searchedArray;
+        }
+
+
+        $paginatedUsers = $this->paginate($pagination, $itemPerPage)->toArray();
 
         $newLinks = [];
 
