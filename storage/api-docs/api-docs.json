@@ -40,7 +40,7 @@
                         }
                     },
                     "404": {
-                        "description": "User with the provided id is not found.",
+                        "description": "User with the provided id was not found.",
                         "content": {
                             "application/json": {
                                 "schema": {}
@@ -64,44 +64,34 @@
                         "schema": {
                             "type": "integer"
                         }
-                    },
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "User name.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "avatar",
-                        "in": "query",
-                        "description": "User avatar image path.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "email",
-                        "in": "query",
-                        "description": "User email address.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "position",
-                        "in": "query",
-                        "description": "User position.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
                     }
                 ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "raw": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "role": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "json",
+                                "example": {
+                                    "name": "James Parker",
+                                    "email": "j.parker@kt.com",
+                                    "role": "Administrator"
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "422": {
                         "description": "Not all required filed are provided.",
@@ -148,7 +138,7 @@
                         }
                     },
                     "404": {
-                        "description": "User with provided id is not found.",
+                        "description": "User with provided id was not found.",
                         "content": {
                             "application/json": {
                                 "schema": {}
@@ -165,47 +155,35 @@
                 ],
                 "description": "Add new user.",
                 "operationId": "47070944c509b343baa9d064ea0f89bc",
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "User name.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "avatar",
-                        "in": "query",
-                        "description": "User avatar image path.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "email",
-                        "in": "query",
-                        "description": "User email address.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "position",
-                        "in": "query",
-                        "description": "User position.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "raw": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "role": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "json",
+                                "example": {
+                                    "name": "James Parker",
+                                    "email": "j.parker@kt.com",
+                                    "role": "Administrator"
+                                }
+                            }
                         }
                     }
-                ],
+                },
                 "responses": {
                     "422": {
-                        "description": "Not all required fileds are provided.",
+                        "description": "Not all required fields are provided.",
                         "content": {
                             "application/json": {
                                 "schema": {}

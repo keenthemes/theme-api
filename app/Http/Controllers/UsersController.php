@@ -333,65 +333,51 @@ class UsersController extends Controller
      *     path="/user",
      *     tags={"Users"},
      *     description="Add new user.",
-     *     @OA\Parameter(
-     *          name="name",
-     *          description="User name.",
-     *          in="query",
-     *          required=true,
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
-     *     @OA\Parameter(
-     *          name="avatar",
-     *          description="User avatar image path.",
-     *          in="query",
-     *          required=true,
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
-     *      @OA\Parameter(
-     *          name="email",
-     *          description="User email address.",
-     *          in="query",
-     *          required=true,
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
-     *      @OA\Parameter(
-     *          name="position",
-     *          description="User position.",
-     *          in="query",
-     *          required=true,
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
-     *     @OA\Response(response="422", description="Not all required fileds are provided.", @OA\JsonContent()),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="raw",
+     *             @OA\Schema(
+     *                 type="json",
+     *                 @OA\Property(
+     *                     property="name",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="email",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="role",
+     *                     type="string"
+     *                 ),
+     *                 example={"name": "James Parker", "email": "j.parker@kt.com", "role": "Administrator"}
+     *             )
+     *         )
+    *      ),
+     *     @OA\Response(response="422", description="Not all required fields are provided.", @OA\JsonContent()),
      *     @OA\Response(response="200", description="User has been successfully added.", @OA\JsonContent())
      * )
      */
     function addUser(Request $request){
-        $validationResult = Validator::make($request->all(), [
+        $data = json_decode($request->getContent(), true);
+
+        $validationResult =  Validator::make($data, [
             'name' => 'required|string|max:255',
-            'avatar'  => 'required|string|max:255',
+            'avatar'  => 'string|max:255',
             'email'      => 'required|string|email|max:255',
-            'position'      => 'required|string|max:255',
+            'role' => 'required|string|max:255',
         ]);
 
         if(count($validationResult->errors())!=0) {
             return response(["payload"=>["message"=>"The given data was invalid.", "errors"=>$validationResult->errors()]], 422);
         }
 
-        $newUser = $request->all();
+        $data["id"] = count($this->users)+1;
 
-        $newUser["id"] = count($this->users)+1;
+        array_push($this->users, $data);
 
-        array_push($this->users, $newUser);
-
-        return response(["data" => $newUser], 200);
+        return response(["data" => $data], 200);
     }
 
     /**
@@ -408,68 +394,59 @@ class UsersController extends Controller
      *              type="integer"
      *          )
      *      ),
-     *     @OA\Parameter(
-     *          name="name",
-     *          description="User name.",
-     *          in="query",
-     *          required=true,
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
-     *     @OA\Parameter(
-     *          name="avatar",
-     *          description="User avatar image path.",
-     *          in="query",
-     *          required=true,
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
-     *      @OA\Parameter(
-     *          name="email",
-     *          description="User email address.",
-     *          in="query",
-     *          required=true,
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
-     *      @OA\Parameter(
-     *          name="position",
-     *          description="User position.",
-     *          in="query",
-     *          required=true,
-     *          @OA\Schema(
-     *              type="string"
-     *          )
-     *      ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="raw",
+     *             @OA\Schema(
+     *                 type="json",
+     *                 @OA\Property(
+     *                     property="name",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="email",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="role",
+     *                     type="string"
+     *                 ),
+     *                 example={"name": "James Parker", "email": "j.parker@kt.com", "role": "Administrator"}
+     *             )
+     *         )
+    *     ),
      *     @OA\Response(response="422", description="Not all required filed are provided.", @OA\JsonContent()),
      *     @OA\Response(response="200", description="Users data has been successfully updated.", @OA\JsonContent())
      * )
      */
     function updateUser(Request $request, String $id){
-        $validationResult =  Validator::make($request->all(), [
+        $data = json_decode($request->getContent(), true);
+
+        $validationResult =  Validator::make($data, [
             'name' => 'required|string|max:255',
-            'avatar'  => 'required|string|max:255',
+            'avatar'  => 'string|max:255',
             'email'      => 'required|string|email|max:255',
-            'position'      => 'required|string|max:255',
+            'role' => 'required|string|max:255',
         ]);
 
         if(count($validationResult->errors())!=0) {
             return response(["payload"=>["message"=>"The given data was invalid.", "errors"=>$validationResult->errors()]], 422);
         }
 
+        $updateUser = [];
+
         foreach ($this->users as $object) {
             if($object["id"] == $id){
-                $user["name"] = $request->all()["name"];
-                $user["avatar"] = $request->all()["avatar"];
-                $user["email"] = $request->all()["email"];
-                $user["position"] = $request->all()["position"];
+                if(array_key_exists("initials", $object) && array_key_exists("avatar", $data)){
+                    unset($object["initials"]);
+                    $object["avatar"] = $data["avatar"];
+                }
+                $updateUser = (object) array_merge((array) $object, (array) $data);
             }
         }
 
-        return response(["data" => $request->all()], 200);
+        return response(["data" => $updateUser], 200);
     }
 
 
