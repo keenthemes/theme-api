@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "http://127.0.0.1:8000/api",
+            "url": "http://localhost:8080/api",
             "description": "Keenthemes server"
         }
     ],
@@ -287,8 +287,5 @@
             "name": "Users",
             "description": "API Endpoints of Users"
         }
-    ],
-    "security": [
-        []
     ]
 }
