@@ -39,16 +39,16 @@
             dom_id: '#swagger-ui',
             url: "{!! $urlToDocs !!}",
             operationsSorter: {!! isset($operationsSorter) ? '"' . $operationsSorter . '"' : 'null' !!},
-            {!! isset($configUrl) ? '"' . $configUrl . '"' : 'null' !!},
-            {!! isset($validatorUrl) ? '"' . $validatorUrl . '"' : 'null' !!},
-            "{{ route('l5-swagger.'.$documentation.'.oauth2_callback', [], $useAbsolutePath) }}",
+            configUrl: {!! isset($configUrl) ? '"' . $configUrl . '"' : 'null' !!},
+            validatorUrl: {!! isset($validatorUrl) ? '"' . $validatorUrl . '"' : 'null' !!},
+            oauth2RedirectUrl: "{{ route('l5-swagger.'.$documentation.'.oauth2_callback', [], $useAbsolutePath) }}",
 
             requestInterceptor: function(request) {
                 request.headers['X-CSRF-TOKEN'] = '{{ csrf_token() }}';
                 return request;
             },
 
-            [
+            presets: [
                 SwaggerUIBundle.presets.apis,
                 SwaggerUIStandalonePreset
             ],
@@ -61,7 +61,7 @@
             docExpansion : "{!! config('l5-swagger.defaults.ui.display.doc_expansion', 'none') !!}",
             deepLinking: true,
             filter: {!! config('l5-swagger.defaults.ui.display.filter') ? 'true' : 'false' !!},
-            "{!! config('l5-swagger.defaults.ui.authorization.persist_authorization') ? 'true' : 'false' !!}",
+            persistAuthorization: "{!! config('l5-swagger.defaults.ui.authorization.persist_authorization') ? 'true' : 'false' !!}",
 
         })
 
