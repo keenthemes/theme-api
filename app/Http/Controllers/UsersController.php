@@ -18,7 +18,7 @@ class UsersController extends Controller
      *      title="Keenthemes API",
      *      description="Keenthemes products Mock API",
      * )
-     * 
+     *
      *
      * @OA\Server(
      *      url=L5_SWAGGER_CONST_HOST,
@@ -30,8 +30,8 @@ class UsersController extends Controller
      *     name="Users",
      *     description="API Endpoints of Users"
      * )
-     * 
-     * 
+     *
+     *
      */
 
     public $users;
@@ -41,9 +41,9 @@ class UsersController extends Controller
         $this->users = [
             [
                 'id' => 1,
-                'name' => 'Emma Smith', 
-                'avatar' => 'avatars/300-6.jpg', 
-                'email' => 'smith@kpmg.com', 
+                'name' => 'Emma Smith',
+                'avatar' => 'avatars/300-6.jpg',
+                'email' => 'smith@kpmg.com',
                 'position' => 'Art Director',
                 'role' => 'Administrator',
                 'last_login' => 'Yesterday',
@@ -53,33 +53,33 @@ class UsersController extends Controller
             ],
             [
                 'id' => 2,
-                'name' => 'Melody Macy', 
+                'name' => 'Melody Macy',
                 'initials' => ['label' => 'M', 'state' => 'danger'],
-                'email' => 'melody@altbox.com', 
+                'email' => 'melody@altbox.com',
                 'position' => 'Marketing Analytic',
                 'role' => 'Analyst',
                 'last_login' => '20 mins ago',
                 'two_steps' => true,
                 'joined_day' => "10 Nov 2022, 8:43 pm",
                 'online' => false
-            ],        
+            ],
             [
                 'id' => 3,
-                'name' => 'Max Smith', 
-                'avatar' => 'avatars/300-1.jpg', 
-                'email' => 'max@kt.com', 
+                'name' => 'Max Smith',
+                'avatar' => 'avatars/300-1.jpg',
+                'email' => 'max@kt.com',
                 'position' => 'Software Enginer',
                 'role' => 'Developer',
                 'last_login' => '3 days ago',
                 'two_steps' => false,
                 'joined_day' => "22 Sep 2022, 8:43 pm",
                 'online' => false
-            ],    
+            ],
             [
                 'id' => 4,
-                'name' => 'Sean Bean', 
-                'avatar' => 'avatars/300-5.jpg', 
-                'email' => 'sean@dellito.com', 
+                'name' => 'Sean Bean',
+                'avatar' => 'avatars/300-5.jpg',
+                'email' => 'sean@dellito.com',
                 'position' => 'Web Developer',
                 'role' => 'Support',
                 'last_login' => '5 hours ago',
@@ -89,9 +89,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 5,
-                'name' => 'Brian Cox', 
-                'avatar' => 'avatars/300-25.jpg', 
-                'email' => 'brian@exchange.com', 
+                'name' => 'Brian Cox',
+                'avatar' => 'avatars/300-25.jpg',
+                'email' => 'brian@exchange.com',
                 'position' => 'UI/UX Designer',
                 'role' => 'Developer',
                 'last_login' => '2 days ago',
@@ -101,9 +101,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 6,
-                'name' => 'Mikaela Collins', 
+                'name' => 'Mikaela Collins',
                 'initials' => ['label' => 'M', 'state' => 'warning'],
-                'email' => 'mik@pex.com', 
+                'email' => 'mik@pex.com',
                 'position' => 'Head Of Marketing',
                 'role' => 'Administrator',
                 'last_login' => '5 days ago',
@@ -113,9 +113,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 7,
-                'name' => 'Francis Mitcham', 
-                'avatar' => 'avatars/300-9.jpg', 
-                'email' => 'f.mit@kpmg.com', 
+                'name' => 'Francis Mitcham',
+                'avatar' => 'avatars/300-9.jpg',
+                'email' => 'f.mit@kpmg.com',
                 'position' => 'Software Arcitect',
                 'role' => 'Trial',
                 'last_login' => '3 weeks ago',
@@ -125,9 +125,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 8,
-                'name' => 'Olivia Wild', 
+                'name' => 'Olivia Wild',
                 'initials' => ['label' => 'O', 'state' => 'danger'],
-                'email' => 'olivia@corpmail.com', 
+                'email' => 'olivia@corpmail.com',
                 'position' => 'System Admin',
                 'role' => 'Administrator',
                 'last_login' => 'Yesterday',
@@ -137,9 +137,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 9,
-                'name' => 'Neil Owen', 
+                'name' => 'Neil Owen',
                 'initials' => ['label' => 'N', 'state' => 'primary'],
-                'email' => 'owen.neil@gmail.com', 
+                'email' => 'owen.neil@gmail.com',
                 'position' => 'Account Manager',
                 'role' => 'Analyst',
                 'last_login' => '20 mins ago',
@@ -149,9 +149,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 10,
-                'name' => 'Dan Wilson', 
-                'avatar' => 'avatars/300-23.jpg', 
-                'email' => 'dam@consilting.com', 
+                'name' => 'Dan Wilson',
+                'avatar' => 'avatars/300-23.jpg',
+                'email' => 'dam@consilting.com',
                 'position' => 'Web Desinger',
                 'role' => 'Developer',
                 'last_login' => '3 days ago',
@@ -161,9 +161,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 11,
-                'name' => 'Emma Bold', 
+                'name' => 'Emma Bold',
                 'initials' => ['label' => 'E', 'state' => 'danger'],
-                'email' => 'emma@intenso.com', 
+                'email' => 'emma@intenso.com',
                 'position' => 'Corporate Finance',
                 'role' => 'Support',
                 'last_login' => '5 hours ago',
@@ -173,9 +173,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 12,
-                'name' => 'Ana Crown', 
-                'avatar' => 'avatars/300-12.jpg', 
-                'email' => 'ana.cf@limtel.com', 
+                'name' => 'Ana Crown',
+                'avatar' => 'avatars/300-12.jpg',
+                'email' => 'ana.cf@limtel.com',
                 'position' => 'Customer Relationship',
                 'role' => 'Developer',
                 'last_login' => '2 days ago',
@@ -185,7 +185,7 @@ class UsersController extends Controller
             ],
             [
                 'id' => 13,
-                'name' => 'Robert Doe', 
+                'name' => 'Robert Doe',
                 'initials' => ['label' => 'R', 'state' => 'info'],
                 'email' => 'robert@benko.com',
                 'position' => 'Marketing Executive',
@@ -197,9 +197,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 14,
-                'name' => 'John Miller', 
-                'avatar' => 'avatars/300-13.jpg', 
-                'email' => 'miller@mapple.com', 
+                'name' => 'John Miller',
+                'avatar' => 'avatars/300-13.jpg',
+                'email' => 'miller@mapple.com',
                 'position' => 'Project Manager',
                 'role' => 'Trial',
                 'last_login' => '3 weeks ago',
@@ -209,9 +209,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 15,
-                'name' => 'Lucy Kunic', 
+                'name' => 'Lucy Kunic',
                 'initials' => ['label' => 'L', 'state' => 'success'],
-                'email' => 'lucy.m@fentech.com', 
+                'email' => 'lucy.m@fentech.com',
                 'position' => 'SEO Master',
                 'role' => 'Administrator',
                 'last_login' => 'Yesterday',
@@ -221,9 +221,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 16,
-                'name' => 'Minnie Cooper', 
-                'initials' => ['label' => 'M', 'state' => 'primary'], 
-                'email' => 'minnie.cooper@kt.com', 
+                'name' => 'Minnie Cooper',
+                'initials' => ['label' => 'M', 'state' => 'primary'],
+                'email' => 'minnie.cooper@kt.com',
                 'position' => 'Accountant',
                 'role' => 'Analyst',
                 'last_login' => '20 mins ago',
@@ -235,7 +235,7 @@ class UsersController extends Controller
                 'id' => 17,
                 'name' => 'Annette Smith',
                 'avatar' => 'avatars/300-14.jpg',
-                'email' => 'annette.smith@kt.com', 
+                'email' => 'annette.smith@kt.com',
                 'position' => 'Accountant',
                 'role' => 'Developer',
                 'last_login' => '3 days ago',
@@ -246,8 +246,8 @@ class UsersController extends Controller
             [
                 'id' => 18,
                 'name' => 'Kristen Webb',
-                'avatar' => 'avatars/300-18.jpg', 
-                'email' => 'kristen.webb@dellito.com', 
+                'avatar' => 'avatars/300-18.jpg',
+                'email' => 'kristen.webb@dellito.com',
                 'position' => 'Accountant',
                 'role' => 'Support',
                 'last_login' => '5 hours ago',
@@ -257,9 +257,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 19,
-                'name' => 'Vicki Moreno', 
-                'avatar' => 'avatars/300-22.jpg', 
-                'email' => 'vicki.moreno@exchange.com', 
+                'name' => 'Vicki Moreno',
+                'avatar' => 'avatars/300-22.jpg',
+                'email' => 'vicki.moreno@exchange.com',
                 'position' => 'Accountant',
                 'role' => 'Developer',
                 'last_login' => '2 days ago',
@@ -269,9 +269,9 @@ class UsersController extends Controller
             ],
             [
                 'id' => 20,
-                'name' => 'Lucas Hicks', 
+                'name' => 'Lucas Hicks',
                 'initials' => ['label' => 'L', 'state' => 'danger'],
-                'email' => 'lucas.hicks@pex.com', 
+                'email' => 'lucas.hicks@pex.com',
                 'position' => 'Head Of Marketing',
                 'role' => 'Administrator',
                 'last_login' => '5 days ago',
@@ -282,8 +282,8 @@ class UsersController extends Controller
             [
                 'id' => 21,
                 'name' => 'Nellie Jones',
-                'avatar' => 'avatars/300-24.jpg', 
-                'email' => 'nellie.jones@kpmg.com', 
+                'avatar' => 'avatars/300-24.jpg',
+                'email' => 'nellie.jones@kpmg.com',
                 'position' => 'Software Arcitect',
                 'role' => 'Trial',
                 'last_login' => '3 weeks ago',
@@ -415,7 +415,7 @@ class UsersController extends Controller
      *                 example={"name": "James Parker", "email": "j.parker@kt.com", "role": "Administrator"}
      *             )
      *         )
-    *     ),
+     *     ),
      *     @OA\Response(response="422", description="Not all required filed are provided.", @OA\JsonContent()),
      *     @OA\Response(response="200", description="Users data has been successfully updated.", @OA\JsonContent())
      * )
@@ -559,14 +559,14 @@ class UsersController extends Controller
                 }
             }
         }
-    
+
         if($order === "desc"){
             $usersCollection = $usersCollection->sortByDesc($sortLabel);
         } else {
             $usersCollection = $usersCollection->sortBy($sortLabel);
         }
 
-    
+
         foreach ($filters as $key => $value) {
             $usersCollection = $usersCollection->filter(function ($item) use ($key, $value) {
                 return strtolower($item[$key]) == strtolower($value);
